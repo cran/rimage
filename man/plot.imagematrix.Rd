@@ -4,7 +4,7 @@
 \description{
   This function outputs an imagematrix object as an image.
 }
-\usage{plot.imagematrix(x, ...)}
+\usage{\method{plot}{imagematrix}(x, ...)}
 \arguments{
   \item{x}{target image}
   \item{...}{plotting options}

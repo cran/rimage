@@ -28,7 +28,12 @@ Matrix::Matrix(int i, int j) {
 //     }
   x = i;
   y = j;
-  m = new vector< vector<double> >(i,j);
+  m = new vector< vector<double> >();
+  (*m).resize(i);
+      for ( int ii=0; ii<i; ii++ )
+ 	(*m)[ii].resize(j);
+
+  // (i,j)
   //cerr << "*** constructed matrix object " << (int)this << " ***" << endl;
   //cerr << "leaving..." << endl;
   //init();
@@ -41,7 +46,11 @@ Matrix::Matrix( Matrix &ma ) {
   //cerr << "address of ma = " << (int)&ma << endl;
   //cerr << "ma.getX() = " << ma.getX() << ", ma.getY() = " << ma.getY() << endl;
   //resize(ma.getX(),ma.getY());
-  m = new vector< vector<double> >(ma.getX(),ma.getY());
+  m = new vector< vector<double> >();
+  //(ma.getX(),ma.getY())
+  (*m).resize(ma.getX());
+  for ( int i=0; i<ma.getX(); i++ )
+    (*m)[i].resize(ma.getY());
   x = ma.getX();
   y = ma.getY();
   for( int i=0 ; i<ma.getX() ; i++ )
@@ -118,8 +127,13 @@ void Matrix::removeColumn( int column ) {
 void Matrix::resize( int nx, int ny ) {
 
   //cerr << "***** entering Matrix::resize() *****" << endl;
-  if( m==NULL )
-    m = new vector< vector<double> >(nx,ny);
+  if( m==NULL ) {
+    m = new vector< vector<double> >();
+  // (nx,ny)
+    (*m).resize(nx);
+    for ( int i=0; i<nx; i++ )
+ 	(*m)[i].resize(ny);
+  }
   else
     {
       (*m).resize(nx);

@@ -4,7 +4,7 @@
 \description{
   This function outputs information on a given imagematrix object.
 }
-\usage{print.imagematrix(x, ...)}
+\usage{\method{print}{imagematrix}(x, ...)}
 \arguments{
   \item{x}{target image}
   \item{...}{ignored (dummy)}

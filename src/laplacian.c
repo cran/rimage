@@ -8,6 +8,8 @@
  *  complete license terms see file LICENSE
  ***************************************************/
 
+extern void clearFrame(double *img, long w, long h);
+
 void laplacian(double *img, int *w, int *h, double *eimg) {
 	int i, j;
 	double val[8];

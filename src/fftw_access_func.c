@@ -16,11 +16,11 @@ void fftw_access_func( Rcomplex *img, int *nx, int *ny, int *dir, int *debug,
 {
 
   int x,y;
-  FILE *f;
+  //  FILE *f;  Not used in function (Jeff Lewis 3-Jun-2009)
   fftwnd_plan plan;
   fftw_complex *i, *s;
   int mem_size;
-  double im,re;
+  //  double im,re; Not used in function (jeff Lewis 3-Jun-2009)
 
   if (*debug) {
 	  printf("\t*** entered module fftw_access_func...\n");
