@@ -1,8 +1,8 @@
 Package: rimage
-Version: 0.5-4
-Date: 2003-11-13
+Version: 0.5-5
+Date: 2003-12-18
 Title: Image Processing Module for R
-Author: Nikon Digital Technologies Co., Ltd. 
+Author: Nikon Systems Inc.
 Maintainer: Tomomi TAKASHINA <t.takashina@computer.org>
 Depends: R (>= 1.6)
 Description: This package provides functions for image processing,
@@ -10,6 +10,7 @@ Description: This package provides functions for image processing,
   reading JPEG file. This package requires fftw-2 <http://www.fftw.org/>
   and libjpeg <http://www.ijg.org>. This version doesn't require
   pixmap package, which the older version of rimage (private only) required.
+  This package can't be used on Windows in the current form.
 License: BSD
 URL: http://www.nidit.co.jp/
 
