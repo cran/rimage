@@ -5,7 +5,7 @@
   This function makes an imagematrix object from a matrix. This data
   structure is primary data structure to represent image in rimage package.
 }
-\usage{imagematrix(mat, type=c("rgb", "grey"),
+\usage{imagematrix(mat, type=NULL,
          ncol=dim(mat)[1], nrow=dim(mat)[2], noclipping=FALSE)}
 \arguments{
   \item{mat}{array, matrix or vector}

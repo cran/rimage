@@ -6,7 +6,7 @@
   fftw library.
 }
 \usage{
-fftw(img, dir = -1, debug=F)
+fftw(img, dir = -1, debug=FALSE)
 }
 \arguments{
   \item{img}{target image}
