@@ -1,0 +1,23 @@
+cat.picture             JPEG picture of a cat
+clipping                Clipping image
+equalize                Make image having equalized histogram
+fftImg                  Compute FFT image
+fftw                    Apply FFT to 2-Dimensional Data
+highpass                High pass filter for image
+imageType               Get information on color type of imagematrix
+imagematrix             Generate an imagematrix, i.e. primary data
+                        structure of rimage
+laplacian               Laplacian of image
+logo                    R logo imagematrix
+lowpass                 Low Pass Filter for Image
+meanImg                 Mean filter
+Rank Filters            Rank filters (minImg and maxImg)
+normalize               Normalization for vector and matrix
+plot.imagematrix        Plotting an imagematrix object
+print.imagematrix       Print information on a given imagematrix object
+read.jpeg               Read JPEG file
+rgb2grey                Convert color imagematrix to grey imagematrix
+sobel                   Sobel filter
+sobel.h                 sobel filter to extract horizontal edges
+sobel.v                 Sobel filter to extract vertical edges
+thresholding            thresholding image
