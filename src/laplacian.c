@@ -2,13 +2,13 @@
  *
  *  Laplacian Filter Functions for rimage (R package)
  *
- *  $Header: /database/repository/rimage/src/laplacian.c,v 1.3 2003/03/15 06:48:33 tomo Exp $
+ *  $Header: /database/repository/rimage/src/laplacian.c,v 1.3.2.1 2005/01/12 08:39:59 tomo Exp $
  *
  *  Copyright (c) 2003 Nikon Digital Technologies Co., Ltd.
  *  complete license terms see file LICENSE
  ***************************************************/
 
-void laplacian(double *img, long *w, long *h, double *eimg) {
+void laplacian(double *img, int *w, int *h, double *eimg) {
 	int i, j;
 	double val[8];
 	clearFrame(eimg, *w, *h);

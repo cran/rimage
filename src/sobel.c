@@ -20,7 +20,7 @@ void clearFrame(double *img, long w, long h) {
 	}
 }
 
-void sobel_v(double *img, long *w, long *h, double *eimg) {
+void sobel_v(double *img, int *w, int *h, double *eimg) {
 	int i, j;
 	clearFrame(eimg, *w, *h);
 	for (i = 1; i<*w-1; i++) {
@@ -36,7 +36,7 @@ void sobel_v(double *img, long *w, long *h, double *eimg) {
 	}
 }
 
-void sobel_h(double *img, long *w, long *h, double *eimg) {
+void sobel_h(double *img, int *w, int *h, double *eimg) {
 	int i, j;
 	clearFrame(eimg, *w, *h);
 	for (i = 1; i<*w-1; i++) {
