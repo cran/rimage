@@ -3,7 +3,7 @@
  *  Jpeg Read Write Functions
  *
  * 
- *  $Header: /home/repository/rimage/src/Attic/jpegio.c,v 1.1.2.2 2003/04/08 04:06:23 tomo Exp $
+ *  $Header: /home/repository/rimage/src/Attic/jpegio.c,v 1.1.2.3 2003/10/17 06:00:06 tomo Exp $
  *  Copyright (c) 2003 Nikon Digital Technologies Co., Ltd.
  *  complete license terms see file LICENSE
  * 
@@ -77,6 +77,7 @@ void read_JPEG_file (char **filename, double *image, int *ret)
 	int row_stride;		/* physical row width in output buffer */
 	int plane_size;
 	int i, j;
+	int line;
 	char *p;
 	
 	if ((infile = fopen(fname, "rb")) == NULL) {
@@ -102,12 +103,13 @@ void read_JPEG_file (char **filename, double *image, int *ret)
 		((j_common_ptr) &cinfo, JPOOL_IMAGE, row_stride, 1);
 	
 	while (cinfo.output_scanline < cinfo.output_height) {
+		line = cinfo.output_scanline;  /* preserve current scanline */
 		(void) jpeg_read_scanlines(&cinfo, buffer, 1);
 		p = buffer[0]; 
 		plane_size = cinfo.output_width * cinfo.output_height;
 		for (i = 0; i < cinfo.output_width; i++) {
 			for (j = 0; j<cinfo.output_components; j++) {
-				image[cinfo.output_scanline + cinfo.output_height * i 
+				image[line + cinfo.output_height * i 
 					 + j * plane_size] = (unsigned char) *p++;
 			}
 		}

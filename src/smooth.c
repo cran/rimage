@@ -3,7 +3,7 @@
  *  Smooth Filter Functions for rimage (R package)
  *
  * 
- *  $Header: /home/repository/rimage/src/smooth.c,v 1.5.2.1 2003/04/07 07:34:52 tomo Exp $
+ *  $Header: /home/repository/rimage/src/smooth.c,v 1.5.2.2 2003/10/17 06:02:10 tomo Exp $
  *  Copyright (c) 2003 Nikon Digital Technologies Co., Ltd.
  *  complete license terms see file LICENSE
  * 
@@ -16,6 +16,9 @@
 #define MINDOUBLE DBL_MIN
 #define MAXDOUBLE DBL_MAX
 #endif
+
+extern void clearFrame(double *img, long w, long h);
+
 
 double max(double *val, int len) {
 	double w;
@@ -57,7 +60,6 @@ void meanfilter(double *img, long *width, long *height, double *eimg) {
       sum += img[*height * i + (j+1)];
       sum += img[*height * (i+1) + (j+1)];
       sum += img[*height * i + j];
-	  //      eimg[*width * i +j] = sum / 9.0;
       eimg[*height * i +j] = sum / 9.0;
       sum = 0.0;
     }

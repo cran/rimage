@@ -1,4 +1,4 @@
-# configure.in: $Header: /home/repository/rimage/configure.in,v 1.1.2.2 2003/04/07 08:00:59 tomo Exp $
+# configure.in: $Header: /home/repository/rimage/configure.in,v 1.1.2.4 2003/10/21 08:14:40 tomo Exp $
 
 # Process this file with autoconf to produce a configure script.
 AC_INIT(rimage configuration script, 0.4, takashina.tomomi@nikon.co.jp)
@@ -15,57 +15,58 @@ AC_HEADER_STDC
 AC_ARG_WITH([fftw-include],
 	[AC_HELP_STRING([--with-fftw-include=FFTW_INCLUDE],
                         [specify location of fftw.h])],
-	[FFTW_INCLUDE="${withval}"], [FFTW_INCLUDE=""])
-
-INCLUDE="${FFTW_INCLUDE} $INCLUDE"
+	[FFTW_INCLUDE="${withval}/"],
+	[FFTW_INCLUDE=""])
 
 AC_ARG_WITH([jpeg-include],
 	[AC_HELP_STRING([--with-jpeg-include=JPEG_INCLUDE],
                         [specify location of jpeglib.h])],
-	[JPEG_INCLUDE="${withval}"], [JPEG_INCLUDE=""])
+	[JPEG_INCLUDE="${withval}/"],
+	[JPEG_INCLUDE=""])
 
-INCLUDE="${JPEG_INCLUDE} $INCLUDE"
-
-AC_CHECK_HEADERS([fftw.h], [HAVE_FFTW_H=TRUE],
+AC_CHECK_HEADERS([${FFTW_INCLUDE}fftw.h], [HAVE_FFTW_H=TRUE],
                  [AC_MSG_ERROR([Sorry, can't find fftw header])])
 
-AC_CHECK_HEADERS([jpeglib.h], [HAVE_JPEG_H=TRUE],
+
+AC_CHECK_HEADERS([${JPEG_INCLUDE}jpeglib.h], [HAVE_JPEG_H=TRUE],
                  [AC_MSG_ERROR([Sorry, can't find jpeglib header])])
+
+if test ! $FFTW_INCLUDE = ""; then
+   INCLUDE="-I${FFTW_INCLUDE}"
+fi
+
+if test ! $JPEG_INCLUDE = ""; then
+   INCLUDE="-I${JPEG_INCLUDE} ${INCLUDE}"
+fi
+
 
 # Checks for libraries.
 
 AC_ARG_WITH([fftw-lib],
 	[AC_HELP_STRING([--with-fftw-lib=FFTW_INCLUDE],
                         [specify location of libfftw])],
-	[FFTW_LIB="-L${withval}"],
-        [FFTW_LIB=""])
+	LIBS="-L${withval} -lfftw",
+	LIBS="-lfftw")
+
 
 AC_ARG_WITH([jpeg-lib],
 	[AC_HELP_STRING([--with-jpeg-lib=JPEG_LIB],
                         [specify location of libjpeg])],
-	[JPEG_LIB="-L${withval}"],
-        [JPEG_LIB=""])
+	LIBS="-L${withval} -ljpeg ${LIBS}",
+	LIBS="-ljpeg ${LIBS}")
 
-
-LDFLAGS="${FFTW_LIB} -L/usr/local/lib -L/usr/lib" 
-AC_CHECK_LIB([fftw], [fftwnd_one], [LIBS_FFTW="-lfftw"],
-             [AC_MSG_ERROR([Sorry, can't find fftw library. Please use --with-fftw-lib.])])
-
-LDFLAGS="${JPEG_LIB} ${LDFLAGS}" 
-AC_CHECK_LIB([jpeg], [jpeg_stdio_src], [LIBS_JPEG="-ljpeg"],
-             [AC_MSG_ERROR([Sorry, can't find jpeg library. Please use --with-libjpeg-lib.])])
-
-LIBS="$LIBS_FFTW $LIBS_JPEG"
 # Checks for typedefs, structures, and compiler characteristics.
 AC_C_INLINE
 
 # Checks for library functions.
 AC_FUNC_MALLOC
 
-#AC_SUBST(LIBS)
+AC_SUBST(LIBS)
 #AC_SUBST(LDFLAGS)
 AC_SUBST(HAVE_FFTW_H)
 AC_SUBST(HAVE_JPEG_H)
 AC_SUBST(INCLUDE)
 AC_CONFIG_FILES([src/Makevars])
 AC_OUTPUT
+
+

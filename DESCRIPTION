@@ -1,6 +1,6 @@
 Package: rimage
-Version: 0.5-1
-Date: 2003-6-9
+Version: 0.5-3
+Date: 2003-10-21
 Title: Image Processing Module for R
 Author: Nikon Digital Technologies Co., Ltd. 
 Maintainer: Tomomi TAKASHINA <t.takashina@computer.org>
