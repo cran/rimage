@@ -3,7 +3,7 @@
  *  Jpeg Read Write Functions
  *
  * 
- *  $Header: /home/repository/rimage/src/Attic/jpegio.c,v 1.1.2.3 2003/10/17 06:00:06 tomo Exp $
+ *  $Header: /database/repository/rimage/src/Attic/jpegio.c,v 1.1.2.4 2004/03/19 06:11:11 tomo Exp $
  *  Copyright (c) 2003 Nikon Digital Technologies Co., Ltd.
  *  complete license terms see file LICENSE
  * 
@@ -11,7 +11,7 @@
 
 
 #include <stdio.h>
-#include "jpeglib.h"
+#include <jpeglib.h>
 #include <setjmp.h>
 
 struct my_error_mgr {

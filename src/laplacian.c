@@ -2,7 +2,7 @@
  *
  *  Laplacian Filter Functions for rimage (R package)
  *
- *  $Header: /home/repository/rimage/src/laplacian.c,v 1.3 2003/03/15 06:48:33 tomo Exp $
+ *  $Header: /database/repository/rimage/src/laplacian.c,v 1.3 2003/03/15 06:48:33 tomo Exp $
  *
  *  Copyright (c) 2003 Nikon Digital Technologies Co., Ltd.
  *  complete license terms see file LICENSE

@@ -1,4 +1,4 @@
-/** $Header: /home/repository/rimage/src/Attic/freqfilters.cpp,v 1.1.2.1 2003/03/15 07:44:18 tomo Exp $
+/** $Header: /database/repository/rimage/src/Attic/freqfilters.cpp,v 1.1.2.1 2003/03/15 07:44:18 tomo Exp $
  **
  ** Copyright (c) 2003 Nikon Digital Technologies Co., Ltd.
  ** For complete license terms see file LICENSE

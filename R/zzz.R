@@ -1,9 +1,9 @@
 ##
 ## zzz: initialization of rimage
 ##
-## $Header: /home/repository/rimage/R/zzz.R,v 1.1.2.4 2003/04/07 07:32:29 tomo Exp $
+## $Header: /database/repository/rimage/R/zzz.R,v 1.1.2.5 2004/03/17 06:35:18 tomo Exp $
 ##
-## Copyright (c) 2003 Nikon Digital Technologies Co., Ltd.
+## Copyright (c) 2003 Nikon Systems Inc.
 ## For complete license terms see file LICENSE
 
 .First.lib <- function(lib, pkg) {

@@ -1,6 +1,6 @@
-## $Header: /home/repository/rimage/R/freq.R,v 1.1.2.2 2003/04/07 07:32:29 tomo Exp $
+## $Header: /database/repository/rimage/R/freq.R,v 1.1.2.3 2004/03/17 06:35:18 tomo Exp $
 ##
-## Copyright (c) 2003 Nikon Digital Technologies Co., Ltd.
+## Copyright (c) 2003 Nikon Systems Inc.
 ## For complete license terms see file LICENSE
 
 
@@ -15,8 +15,8 @@ lowpass <- function(img, radius=40) {
               as.integer(w),
               as.integer(h),
               as.integer(radius),
-              spec = double(h*w)
-              ##)$spec, nrow=dim(img)[1], ncol=dim(img)[2])
+              spec = double(h*w),
+              PACKAGE="rimage"
               )$spec, nrow=h, ncol=w)
   }
   fft <- fftw(img)
@@ -43,7 +43,8 @@ highpass <- function(img, radius=40) {
               as.integer(w),
               as.integer(h),
               as.integer(radius),
-              spec = double(w*h)
+              spec = double(w*h),
+              PACKAGE="rimage"
               )$spec, nrow=dim(img)[1], ncol=dim(img)[2])
   }
   fft <- fftw(img)

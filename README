@@ -1,0 +1,25 @@
+This directory 'src' includes Windows specific libraries and relevant
+headers in the following.
+
+   libfftw.a  : FFTW library compiled with MinGW on Windows
+   fftw.h     : FFTW library header
+   libjpeg.a  : The JPEG library compiled with MinGW on Windows
+   jpeglib.h  : The JPEG library header
+   jconfig.h  : The JPEG library header
+   jmorecfg.h : The JPEG library header
+
+Please note that other platforms don't use the files in this directory.
+If you may use this package other platforms than windows, you need to 
+install FFTW and the JPEG library properly.
+
+If you need the sets of source code corresponding to the above binary
+files of the JPEG library and FFTW library, the maintainer of rimage
+package sends the sets upon the request. Please contact Tomomi TAKASHINA
+<mailto:t.takashina@computer.org>. The maintainer of the package will 
+keep the sets at least for three years since the release of the package.
+
+As for information of FFTW, please refer to <http://www.fftw.org>.
+
+AS for information of the JPEG library, please refer to
+<http://www.ijg.org/>.
+

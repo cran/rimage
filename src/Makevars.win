@@ -1,0 +1,3 @@
+PKG_CPPFLAGS=-O2 -I.
+PKG_LIBS=libfftw.a libjpeg.a
+

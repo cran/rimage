@@ -1,9 +1,9 @@
 ##
 ## imagematrix class definition
 ##
-## $Header: /home/repository/rimage/R/Attic/imagematrix.R,v 1.1.2.4 2003/04/11 09:00:44 tomo Exp $
+## $Header: /database/repository/rimage/R/Attic/imagematrix.R,v 1.1.2.5 2004/03/17 06:35:18 tomo Exp $
 ##
-## Copyright (c) 2003 Nikon Digital Technologies Co., Ltd.
+## Copyright (c) 2003 Nikon Systems Inc.
 ## For complete license terms see file LICENSE
 
 imagematrix <- function(mat, type=NULL, ncol=dim(mat)[1], nrow=dim(mat)[2],

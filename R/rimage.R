@@ -1,9 +1,9 @@
 ##
 ## rimage: Image Processing Library for R
 ##
-## $Header: /home/repository/rimage/R/rimage.R,v 1.8.2.7 2003/04/08 02:59:57 tomo Exp $
+## $Header: /database/repository/rimage/R/rimage.R,v 1.8.2.8 2004/03/17 06:35:18 tomo Exp $
 ##
-## Copyright (c) 2003 Nikon Digital Technologies Co., Ltd.
+## Copyright (c) 2003 Nikon Systems Inc.
 ## For complete license terms see file LICENSE
 
 
@@ -62,7 +62,8 @@ sobel.h <- function(img) {
   h <- dim(img)[1]
   imagematrix(abs(matrix(.C("sobel_h",
                             as.double(img), as.integer(w), as.integer(h),
-                            eimg = double(w * h))$eimg,
+                            eimg = double(w * h),
+                            PACKAGE="rimage")$eimg,
                          nrow=h, ncol=w)), noclipping=TRUE)
 }
 
@@ -71,7 +72,8 @@ sobel.v <- function(img) {
   h <- dim(img)[1]
   imagematrix(abs(matrix(.C("sobel_v",
                             as.double(img), as.integer(w), as.integer(h),
-                            eimg = double(w * h))$eimg,
+                            eimg = double(w * h),
+                            PACKAGE="rimage")$eimg,
                          nrow=h, ncol=w)), noclipping=TRUE)
 }
 
@@ -86,7 +88,8 @@ laplacian <- function(img) {
   h <- dim(img)[1]
   l.img <- imagematrix(matrix(.C("laplacian",
                                  as.double(img), as.integer(w), as.integer(h),
-                                 eimg = double(w * h))$eimg,
+                                 eimg = double(w * h),
+                                 PACKAGE="rimage")$eimg,
                               nrow=h, ncol=w),
                        noclipping=TRUE)
 }
@@ -102,7 +105,8 @@ meanImg <- function(img) {
   h <- dim(ex.img)[1]
   f.img <- matrix(.C("meanfilter",
                      as.double(ex.img), as.integer(w), as.integer(h),
-                     eimg = double(w * h))$eimg,
+                     eimg = double(w * h),
+                     PACKAGE="rimage")$eimg,
                   nrow=h, ncol=w)
   imagematrix(f.img[2:(dim(f.img)[1]-1),2:(dim(f.img)[2]-1)])
 }
@@ -114,7 +118,8 @@ minImg <- function(img) {
   h <- dim(ex.img)[1]
   f.img <- matrix(.C("minfilter",
                      as.double(ex.img), as.integer(w), as.integer(h),
-                     eimg = double(w * h))$eimg,
+                     eimg = double(w * h),
+                     PACKAGE="rimage")$eimg,
                   nrow=h, ncol=w)
   imagematrix(f.img[2:(dim(f.img)[1]-1),2:(dim(f.img)[2]-1)])
 }
@@ -126,7 +131,8 @@ maxImg <- function(img) {
   h <- dim(ex.img)[1]
   f.img <- matrix(.C("maxfilter",
                      as.double(ex.img), as.integer(w), as.integer(h),
-                     eimg = double(w * h))$eimg,
+                     eimg = double(w * h),
+                     PACKAGE="rimage")$eimg,
                   nrow=h, ncol=w)
   imagematrix(f.img[2:(dim(f.img)[1]-1),2:(dim(f.img)[2]-1)])
 }
@@ -146,7 +152,8 @@ equalize <- function(img) {
                    as.double(img),
                    as.integer(w),
                    as.integer(h),
-                   spec = double(w*h)
+                   spec = double(w*h),
+                   PACKAGE="rimage"
                    )$spec, nrow=h, ncol=w)
   imagematrix(res / 255)  ## map it to 0..1
 }

@@ -1,4 +1,4 @@
-# configure.in: $Header: /home/repository/rimage/configure.in,v 1.1.2.4 2003/10/21 08:14:40 tomo Exp $
+# configure.in: $Header: /database/repository/rimage/configure.in,v 1.1.2.4 2003/10/21 08:14:40 tomo Exp $
 
 # Process this file with autoconf to produce a configure script.
 AC_INIT(rimage configuration script, 0.4, takashina.tomomi@nikon.co.jp)

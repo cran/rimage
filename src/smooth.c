@@ -3,7 +3,7 @@
  *  Smooth Filter Functions for rimage (R package)
  *
  * 
- *  $Header: /home/repository/rimage/src/smooth.c,v 1.5.2.2 2003/10/17 06:02:10 tomo Exp $
+ *  $Header: /database/repository/rimage/src/smooth.c,v 1.5.2.2 2003/10/17 06:02:10 tomo Exp $
  *  Copyright (c) 2003 Nikon Digital Technologies Co., Ltd.
  *  complete license terms see file LICENSE
  * 
