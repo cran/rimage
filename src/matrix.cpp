@@ -3,6 +3,7 @@
  **  For complete license terms see file LICENSE
  **/
 
+#include <assert.h>
 #include "matrix.h"
 
 Matrix::Matrix() {

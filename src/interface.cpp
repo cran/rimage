@@ -1,3 +1,4 @@
+#include <assert.h>
 #include "freqfilters.h"
 
 using namespace std;
