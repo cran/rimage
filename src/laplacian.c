@@ -12,7 +12,6 @@ extern void clearFrame(double *img, long w, long h);
 
 void laplacian(double *img, int *w, int *h, double *eimg) {
 	int i, j;
-	double val[8];
 	clearFrame(eimg, *w, *h);
 	for (i = 1; i<*w-1; i++) {
 		for (j = 1; j<*h-1; j++) {

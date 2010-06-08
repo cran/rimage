@@ -13,7 +13,7 @@
   grey imagematrix
 }
 \examples{
-  x <- read.jpeg(system.file("data", "cat.jpg", package="rimage"))
+  x <- read.jpeg(system.file("images", "cat.jpg", package="rimage"))
   plot(rgb2grey(x))
 }
 \keyword{misc}

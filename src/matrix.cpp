@@ -12,7 +12,7 @@ Matrix::Matrix() {
   x=-1; y=-1; 
   //cerr << "*** constructed matrix object " << (int)this << " ***" << endl;
 
-};
+}
 
 
 Matrix::Matrix(int i, int j) {
@@ -101,7 +101,7 @@ void Matrix::removeRow( int row ) {
 
   // m[i].remove(row)...
   //info();
-  for( int i=0; i<(*m).size(); i++ )
+  for( unsigned int i=0; i<(*m).size(); i++ )
     {
       vector<double>::iterator it = ((*m)[i]).begin();
       it += row;
@@ -159,7 +159,7 @@ void Matrix::deb(void) {
   string s("Short hello from Matrix...");
   fprintf(stderr,"%s\n", s.c_str());
 
-};
+}
 
 
 

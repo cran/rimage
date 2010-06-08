@@ -13,7 +13,7 @@
   "rgb" or "grey"
 }
 \examples{
-  x <- read.jpeg(system.file("data", "cat.jpg", package="rimage"))
+  x <- read.jpeg(system.file("images", "cat.jpg", package="rimage"))
   cat("Image Type", imageType(x))
 
   x.grey <- rgb2grey(x)

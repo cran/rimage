@@ -66,7 +66,7 @@ Matrix& computeEqualization( Matrix& m ) {
   vector< int > map(256);
 
   double fac = 1.0 / ( m.getX() * m.getY() );
-  for( int i=0 ; i<histo.size() ; i++ ) 
+  for( unsigned int i=0 ; i<histo.size() ; i++ ) 
     {
       double s = summarize(histo,i);
       double r = s * 255 * fac;

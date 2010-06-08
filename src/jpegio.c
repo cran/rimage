@@ -78,7 +78,7 @@ void read_JPEG_file (char **filename, double *image, int *ret)
 	int plane_size;
 	int i, j;
 	int line;
-	char *p;
+	//char *p;
 	
 	if ((infile = fopen(fname, "rb")) == NULL) {
 		*ret = -1;   /* couldn't open file */
@@ -105,12 +105,12 @@ void read_JPEG_file (char **filename, double *image, int *ret)
 	while (cinfo.output_scanline < cinfo.output_height) {
 		line = cinfo.output_scanline;  /* preserve current scanline */
 		(void) jpeg_read_scanlines(&cinfo, buffer, 1);
-		p = buffer[0]; 
+		unsigned char *p = buffer[0]; 
 		plane_size = cinfo.output_width * cinfo.output_height;
 		for (i = 0; i < cinfo.output_width; i++) {
 			for (j = 0; j<cinfo.output_components; j++) {
 				image[line + cinfo.output_height * i 
-					 + j * plane_size] = (unsigned char) *p++;
+					 + j * plane_size] = *p++;
 			}
 		}
 	}

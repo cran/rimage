@@ -19,7 +19,8 @@
   plot(logo, main="Original Logo")
   plot(equalize(logo), main="Equalized Logo")
 
-  catpic <- rgb2grey(read.jpeg(system.file("data", "cat.jpg", package="rimage")))
+  catpic <- rgb2grey(read.jpeg(system.file("images", "cat.jpg",
+                                           package="rimage")))
   plot(catpic, main="Cat Image in Greyscale")
   plot(equalize(catpic), main="Equalized Cat Image")
 
